@@ -1,0 +1,331 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap");
+@import "variables";
+@import "breakpoints";
+@import "modal";
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  font-family: "roboto";
+  background: #f6f8fc;
+}
+header {
+  @extend .between; //Between classının özelliklerini aktardık
+  padding: 20px;
+  gap: 20px;
+  font-size: 21px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  .left {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    i {
+      font-size: 29px;
+    }
+    img {
+      width: 50px;
+    }
+  }
+  .middle {
+    form {
+      display: flex;
+      background: rgb(243, 243, 243);
+      padding: 6px 9px;
+      border-radius: 10px;
+      input {
+        border: none;
+        outline: none;
+        font-size: 12px;
+        background: transparent;
+      }
+    }
+    @include sm {
+      display: none;
+    }
+  }
+  .right {
+    @extend .between;
+    gap: 15px;
+    i {
+      @extend .icon;
+    }
+    img {
+      height: 36px;
+      width: 36px;
+      border-radius: 50%;
+    }
+  }
+}
+section {
+  display: flex;
+  gap: 20px;
+}
+// Left Navigation Spot
+nav {
+  display: flex;
+  flex-direction: column;
+  padding: 12px;
+  gap: 40px;
+  @include sm {
+    padding: 8px;
+    padding-left: 6px;
+  }
+  .create {
+    background: $light_blue;
+    border-radius: 15px;
+    padding: 12px;
+    display: flex;
+    gap: 20px;
+    cursor: pointer;
+    transition: box-shadow 0.3s;
+    &:hover {
+      box-shadow: 2px 2px 10px gray;
+    }
+  }
+  ul {
+    //Elementleri alt alta sıralayıp boşluk vermek için
+    //1-Flex ,
+    // display: flex;
+    // flex-direction: column;
+    //2-Grid ,
+    display: grid;
+    gap: 16px;
+    li {
+      list-style: none;
+      label {
+        padding: 8px;
+        margin-left: 4px;
+        display: flex;
+        gap: 12px;
+        border-radius: 0 15px 15px 0;
+        cursor: pointer;
+        &:hover {
+          background: $light_blue;
+        }
+      }
+      input {
+        display: none;
+      }
+      //
+      &:has(input:checked)label {
+        background: $light_blue;
+      }
+    }
+  }
+  .bottom {
+    margin-left: 8px;
+  }
+}
+//Js ile eklediğimi Hide Class'ı aktifse
+//bütün yazıları kaldı
+.hide {
+  span {
+    display: none;
+  }
+}
+//Middle Mail Spot
+main {
+  //Flex elemanının büyümesine izin verir
+  flex-grow: 1;
+  @include sm {
+    margin-right: 20px;
+  }
+  .top {
+    @extend .between;
+    background: white;
+    border-radius: 10px 10px 0 0;
+    padding: 8px 16px;
+    i {
+      @extend .icon;
+    }
+    .left,
+    .right {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+  }
+  .mails {
+    background: $gray;
+    height: 75vh;
+  }
+}
+.mail {
+  display: grid;
+  grid-template-columns: 1fr 3fr 1fr;
+  font-size: 16px;
+  padding: 10px;
+  border-bottom: 1px solid white;
+  column-gap: 5px;
+  cursor: pointer;
+
+  #star {
+    color: gold;
+  }
+
+  &:hover {
+    box-shadow: 0 0 30px rgba(128, 128, 128, 0.4);
+  }
+  .info {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+  .content {
+    display: flex;
+    gap: 5px;
+    align-items: center;
+    white-space: nowrap;
+    overflow: hidden; //taşan yazıları gizle
+
+    .title {
+      font-weight: bold;
+    }
+    .desc {
+      overflow: hidden; //taşan yazıları gizle
+      white-space: nowrap; //tek satırda gösterme
+      text-overflow: ellipsis; //eğer ki taşan yazı varsa... koy
+    }
+  }
+  .time {
+    text-align: end;
+    white-space: nowrap;
+  }
+  //sil butonu mail hover olunca göster
+  #button-wrapper {
+    display: none;
+  }
+  button {
+    border: none;
+    background: transparent;
+    cursor: pointer;
+    transition: all 0.3s;
+    padding: 4px 10px;
+    border-radius: 5px;
+
+    &:hover {
+      background: rgba(201, 200, 200);
+    }
+  }
+
+  &:hover > #button-wrapper {
+    display: flex;
+    justify-content: end;
+  }
+
+  &:hover > .time {
+    display: none;
+  }
+}
+//Right Spot
+aside {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 25px;
+  padding: 20px;
+
+  @include sm {
+    padding: 12px;
+  }
+  span {
+    background: $dark_gray;
+    height: 2px;
+    width: 100%;
+  }
+
+  img {
+    @extend .icon;
+    cursor: pointer;
+    width: 30px;
+    height: 30px;
+  }
+
+  @include sm {
+    display: none;
+  }
+}
+//Modal.scss
+.modal-wrapper {
+  background: rgba(0, 0, 0, 0.507);
+  position: fixed;
+  inset: 0;
+  display: none;
+  place-items: center;
+}
+.modal {
+  background: white;
+  width: 80%;
+  max-width: 700px;
+  height: 90%;
+  display: flex;
+  flex-direction: column;
+  border-radius: 10px;
+
+  input {
+    border: none;
+    border-bottom: 1px solid gray;
+    padding: 10px;
+    margin: 0 6px;
+    outline: none;
+  }
+
+  textarea {
+    height: 100%;
+    border: none;
+    outline: none;
+    font-family: "roboto";
+    resize: none;
+    margin: 0 6px;
+    padding-top: 10px;
+  }
+
+  #send {
+    width: 140px;
+    border: none;
+    padding: 14px;
+    border-radius: 50px;
+    background: #1b61d1;
+    color: white;
+    margin: 10px;
+    cursor: pointer;
+
+    &:hover {
+      background: #05337c;
+    }
+  }
+}
+.modal .header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+  background: rgb(190, 190, 190);
+  border-radius: 10px 10px 0 0;
+  font-size: 20px;
+
+  button {
+    border: none;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    display: grid;
+    place-items: center;
+    cursor: pointer;
+    transition: all 0.3s;
+
+    &:hover {
+      background: gray;
+    }
+  }
+}
+.warn {
+  padding-top: 50px;
+  text-align: center;
+  font-weight: bold;
+}

@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <!--Boostrap Icons-->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.2/font/bootstrap-icons.min.css"
+    />
+    <link rel="stylesheet" href="styles/style.css" />
+  </head>
+
+  <body>
+    <!--Header-->
+    <header>
+      <!--Sol Kısım-->
+      <div class="left">
+        <div id="menu" class="icon">
+          <i class="bi bi-list"></i>
+        </div>
+        <img src="/assets/gmail-logo.webp" />
+        <span>Gmail</span>
+      </div>
+      <!--Orta Kısım-->
+      <div class="middle">
+        <form>
+          <button class="icon">
+            <i class="bi bi-search"></i>
+          </button>
+          <input id="search" placeholder="Mail arayın..." type="search" />
+        </form>
+      </div>
+      <!--Sağ Kısım-->
+      <div class="right">
+        <i class="bi bi-question-circle"></i>
+        <i class="bi bi-gear-fill"></i>
+        <i class="bi bi-menu-button-wide-fill"></i>
+        <img src="/assets/man.jpg" alt="" />
+      </div>
+    </header>
+    <!--Header-->
+    <!--Main Content-->
+    <section>
+      <!--Left Navigation-->
+      <nav>
+        <!--Creating Nav-->
+        <div class="create">
+          <i class="bi bi-pencil-fill"></i>
+          <span>Oluştur</span>
+        </div>
+
+        <!--Nav Redirect Spot-->
+        <ul>
+          <li>
+            <input checked id="cat1" type="radio" name="cat" />
+            <label for="cat1">
+              <i class="bi bi-image"></i>
+              <span>Gelen Kutusu</span>
+            </label>
+          </li>
+          <li>
+            <input id="cat2" type="radio" name="cat" />
+            <label for="cat2">
+              <i class="bi bi-star"></i>
+              <span>Yıldızlı</span>
+            </label>
+          </li>
+          <li>
+            <input id="cat3" type="radio" name="cat" />
+            <label for="cat3">
+              <i class="bi bi-clock"></i>
+              <span>Zamanlı</span>
+            </label>
+          </li>
+          <li>
+            <input id="cat4" type="radio" name="cat" />
+            <label for="cat4">
+              <i class="bi bi-arrow-right-circle"></i>
+              <span>Gönderilenler</span>
+            </label>
+          </li>
+          <li>
+            <input id="cat5" type="radio" name="cat" />
+            <label for="cat5">
+              <i class="bi bi-archive"></i>
+              <span>Taslaklar</span>
+            </label>
+          </li>
+          <li>
+            <input id="cat6" type="radio" name="cat" />
+            <label for="cat6">
+              <i class="bi bi-arrow-down"></i>
+              <span>Daha Fazla</span>
+            </label>
+          </li>
+        </ul>
+
+        <!--Nav Category-->
+        <div class="bottom">
+          <span>Kategoriler</span>
+          <i class="bi bi-plus-lg"></i>
+        </div>
+      </nav>
+
+      <!--Middle Spot-->
+      <main>
+        <!--Top Bar-->
+        <div class="top">
+          <div class="left">
+            <input type="checkbox" />
+            <i class="bi bi-arrow-clockwise"></i>
+            <i class="bi bi-three-dots-vertical"></i>
+          </div>
+          <div class="right">
+            <p>1-50 of 94</p>
+            <i class="bi bi-chevron-left"></i>
+            <i class="bi bi-chevron-right"></i>
+          </div>
+        </div>
+
+        <!--Mails Start-->
+        <div class="mails">
+          <!--Mail Start-->
+          <!--  <div class="mail">
+            <div class="info">
+              <input type="checkbox" />
+              <i class="bi bi-star-fill"></i>
+              <b>Fatih</b>
+            </div>
+            <div class="content">
+              <p class="title">Yaz Tatili</p>
+              <p class="desc">Tatile gidiyor muyuz?</p>
+            </div>
+            <p class="time">6 Aralık</p>
+              <button id="delete">Sil</button>        
+          </div> -->
+          <!-- Mail Finish-->
+        </div>
+        <!--Mails Finish-->
+      </main>
+
+      <!--Right Spot-->
+      <aside>
+        <img src="/assets/calendar-48.png" />
+        <img src="/assets/keep-48.png" />
+        <img src="/assets/task-48.png" />
+        <img src="/assets/account-48.png" />
+        <span></span>
+        <i class="bi bi-plus-lg icon"></i>
+      </aside>
+    </section>
+
+    <!--Ekleme Modalı-->
+    <div class="modal-wrapper">
+      <form class="modal">
+        <div class="header">
+          <h5>Yeni İleti</h5>
+          <button type="button" class="close-modal">
+            <span>X</span>
+          </button>
+        </div>
+        <input placeholder="Kime" type="text" />
+        <input placeholder="Konu" type="text" />
+        <textarea></textarea>
+        <button type="submit" id="send">Gönder</button>
+      </form>
+    </div>
+
+    <!--Js-->
+    <script type="module" src="main.js"></script>
+  </body>
+</html>

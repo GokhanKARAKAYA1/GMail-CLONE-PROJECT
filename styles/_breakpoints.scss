@@ -1,0 +1,8 @@
+// For Mobil Phones
+@mixin sm {
+  @media (max-width: 768px) {
+    // content sayesinde  include ile gonderdigimiz
+    // stiller buraya aktarılır
+    @content;
+  }
+}

@@ -1,0 +1,327 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap");
+.between, main .top, header .right, header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.icon, aside img, main .top i, header .right i {
+  width: 35px;
+  height: 35px;
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+  border: none;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+.icon:hover, aside img:hover, main .top i:hover, header .right i:hover {
+  background: #d8dbdd;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "roboto";
+  background: #f6f8fc;
+}
+
+header {
+  padding: 20px;
+  gap: 20px;
+  font-size: 21px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+header .left {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+header .left i {
+  font-size: 29px;
+}
+header .left img {
+  width: 50px;
+}
+header .middle form {
+  display: flex;
+  background: rgb(243, 243, 243);
+  padding: 6px 9px;
+  border-radius: 10px;
+}
+header .middle form input {
+  border: none;
+  outline: none;
+  font-size: 18px;
+  background: transparent;
+}
+@media (max-width: 768px) {
+  header .middle {
+    display: none;
+  }
+}
+header .right {
+  gap: 15px;
+}
+header .right img {
+  height: 36px;
+  width: 36px;
+  border-radius: 50%;
+}
+
+section {
+  display: flex;
+  gap: 20px;
+}
+
+nav {
+  display: flex;
+  flex-direction: column;
+  padding: 12px;
+  gap: 40px;
+}
+@media (max-width: 768px) {
+  nav {
+    padding: 8px;
+    padding-left: 6px;
+  }
+}
+nav .create {
+  background: #d0ebff;
+  border-radius: 15px;
+  padding: 12px;
+  display: flex;
+  gap: 20px;
+  cursor: pointer;
+  transition: box-shadow 0.3s;
+}
+nav .create:hover {
+  box-shadow: 2px 2px 10px gray;
+}
+nav ul {
+  display: grid;
+  gap: 16px;
+}
+nav ul li {
+  list-style: none;
+}
+nav ul li label {
+  padding: 8px;
+  margin-left: 4px;
+  display: flex;
+  gap: 12px;
+  border-radius: 0 15px 15px 0;
+  cursor: pointer;
+}
+nav ul li label:hover {
+  background: #d0ebff;
+}
+nav ul li input {
+  display: none;
+}
+nav ul li:has(input:checked) label {
+  background: #d0ebff;
+}
+nav .bottom {
+  margin-left: 8px;
+}
+
+.hide span {
+  display: none;
+}
+
+main {
+  flex-grow: 1;
+}
+@media (max-width: 768px) {
+  main {
+    margin-right: 20px;
+  }
+}
+main .top {
+  background: white;
+  border-radius: 10px 10px 0 0;
+  padding: 8px 16px;
+}
+main .top .left,
+main .top .right {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+main .mails {
+  background: #e9ecef;
+  height: 75vh;
+}
+
+.mail {
+  display: grid;
+  grid-template-columns: 1fr 3fr 1fr;
+  font-size: 16px;
+  padding: 10px;
+  border-bottom: 1px solid white;
+  -moz-column-gap: 5px;
+       column-gap: 5px;
+  cursor: pointer;
+}
+.mail #star {
+  color: gold;
+}
+.mail:hover {
+  box-shadow: 0 0 30px rgba(128, 128, 128, 0.4);
+}
+.mail .info {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+.mail .content {
+  display: flex;
+  gap: 5px;
+  align-items: center;
+  white-space: nowrap;
+  overflow: hidden;
+}
+.mail .content .title {
+  font-weight: bold;
+}
+.mail .content .desc {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+.mail .time {
+  text-align: end;
+  white-space: nowrap;
+}
+.mail #button-wrapper {
+  display: none;
+}
+.mail button {
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  transition: all 0.3s;
+  padding: 4px 10px;
+  border-radius: 5px;
+}
+.mail button:hover {
+  background: rgb(201, 200, 200);
+}
+.mail:hover > #button-wrapper {
+  display: flex;
+  justify-content: end;
+}
+.mail:hover > .time {
+  display: none;
+}
+
+aside {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 25px;
+  padding: 20px;
+}
+@media (max-width: 768px) {
+  aside {
+    padding: 12px;
+  }
+}
+aside span {
+  background: #495057;
+  height: 2px;
+  width: 100%;
+}
+aside img {
+  cursor: pointer;
+  width: 30px;
+  height: 30px;
+}
+@media (max-width: 768px) {
+  aside {
+    display: none;
+  }
+}
+
+.modal-wrapper {
+  background: rgba(0, 0, 0, 0.507);
+  position: fixed;
+  inset: 0;
+  display: none;
+  place-items: center;
+}
+
+.modal {
+  background: white;
+  width: 80%;
+  max-width: 700px;
+  height: 90%;
+  display: flex;
+  flex-direction: column;
+  border-radius: 10px;
+}
+.modal input {
+  border: none;
+  border-bottom: 1px solid gray;
+  padding: 10px;
+  margin: 0 6px;
+  outline: none;
+}
+.modal textarea {
+  height: 100%;
+  border: none;
+  outline: none;
+  font-family: "roboto";
+  resize: none;
+  margin: 0 6px;
+  padding-top: 10px;
+}
+.modal #send {
+  width: 140px;
+  border: none;
+  padding: 14px;
+  border-radius: 50px;
+  background: #1b61d1;
+  color: white;
+  margin: 10px;
+  cursor: pointer;
+}
+.modal #send:hover {
+  background: #05337c;
+}
+
+.modal .header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+  background: rgb(190, 190, 190);
+  border-radius: 10px 10px 0 0;
+  font-size: 20px;
+}
+.modal .header button {
+  border: none;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+.modal .header button:hover {
+  background: gray;
+}
+
+.warn {
+  padding-top: 50px;
+  text-align: center;
+  font-weight: bold;
+}/*# sourceMappingURL=style.css.map */
