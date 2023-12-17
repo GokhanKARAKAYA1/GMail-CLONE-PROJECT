@@ -11,7 +11,7 @@ The Gmail Clone project is a web application aimed at replicating the core funct
 
 <h3>Features</h3>
 
-- A modern design created with advanced HTML 5, CSS.SCSS ve Js codes.
+- A modern design created with advanced HTML 5, CSS, SCSS ve JS codes.
 - Responsiveness.
 - Enriched content with Google fonts and Boostrap icons.
 If you have any questions or suggestions, feel free to contact me at [gkarakaya0601@gmail.com](mailto:email@example.com).
